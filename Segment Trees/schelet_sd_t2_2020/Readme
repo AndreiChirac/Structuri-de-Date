@@ -1,0 +1,25 @@
+	Prima parte a temei a fost realizata conform pseudocodului oferit in documentatie
+	
+	In cea de-a doua parte a temei am abordat solutia triviala prin parcurgerea fiecarui
+element din lista , caruia i se va cauta un segment cu care ar putea sa se intersecteze .
+Daca segmentul este unul vertical atunci voi cauta segmentele care sunt orizontale si care
+indeplines conditiile de intersectie ( astfel pentru ca doua drepte sa se intersecteze trebuie 
+ca dreapta orizontala sa contina cordonate x care sa cuprinda cordonata x a segmentului 
+vertical , iar y ul segemntului orizontal sa fie inclus intre valorile de tip y ale segmentului 
+vertical) , pentru un segment orizontal se cauta un plan vertical si se respecta conditia
+mentionata anterior.
+	Solutia cu arbori de intervale a fost realizata cu ajutorul unei noi structuri 
+care imi va oferi capacitatea de verifica daca cordonatele unui segment reprezinta capatul de
+inceput sau cel de sfarsit . In acelasi timp am constuit o lista dubla , prima jumatate are
+elementele din lista initiala iar cea de-a doua jumatate continele aceleasi elemente doar ca au 
+fost marcate cu 1 ( reprezinta capetele din dreapta , de final ) iar cordonatele lor sunt schimbate 
+pentru a putea sorta dupa componenta x (atat a capatului stanga cat si cea a captului drepata ) . 
+Dupa ce lista a fost sortata inversez elementele si incep procesul de inserare , stergere si 
+interogare a intervalelor/ segmentelor . Iar pentru ca lista mea continea "dubluri" in privinta
+segmentelor verticale , am decis ca pe cele marcate cu 1 sa le ignor .  
+	
+	Pentru bonus am implementat doar varianta triviala in care m-am folosit de calloc pentru 
+a putea vedea care pozitie este marcata ca fiind goala . Voi parcurge prima lista , voi lua 
+element cu element si voi cauta in lista noua daca pe pozitia elem este 0 daca da atunci il voi
+pune direct elemntul in celula corespunzatoare daca nu voi parcurge de la pozitia elem-1 la 
+pozitia 0 pana cand voi da de o celula goara in care voi pune elemtul .
